@@ -1,0 +1,49 @@
+# cv --> Computer Vision
+!pip install opencv-python
+
+
+
+# Object Detection on Still Image
+# cv2 (we use)
+
+import cv2
+
+# Haar Cascades --> Trained datset which can detect the object for which they have been trained for
+
+cascadeFile = 'C:\\Users\\user\\Documents\\haarcascade_frontalface_default.xml'
+imagePath = 'C:\\Users\\user\\Pictures\\Rajat\\Rajat1.jpg'
+
+# Create Haar cascade Object
+
+faceCascade = cv2.CascadeClassifier(cascadeFile)
+
+# Read the image
+
+image = cv2.imread(imagePath)
+
+# Convert your image into grayscale
+# BGR --> Blue Green Red
+# BGR is a colored format for pictures taken by camera
+
+gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+
+# Detect face in an image
+# detectMultiScale() -->  used to detect objects
+# first Argument --> GrayScale image
+# second Argument -->  Scale factor 1.5
+# third Argument -->  MinNeighbors
+# MinNeighbors(it determines how many more objects you need to detect along with your detectedObject)
+# forth Argument -->  minSize (30*30)
+
+faces = faceCascade.detectMultiScale(gray, scaleFactor=1.5, minNeighbors=3, minSize=(30,30))
+
+# Draw a rectangle around face
+# cv2.rectangle(originalImage, startPoint, Endpoint, Thickness)
+# (0,255,0) --> color inhtml
+# 2 --> thickness of the recatngle
+
+for(x,y,w,h) in faces:
+    cv2.rectangle(image, (x,y), (x+w,y+h), (0,255,0), 2)
+    
+cv2.imshow("Face Found",image)
+cv2.waitKey(0)
