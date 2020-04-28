@@ -7,6 +7,6 @@ There are some steps to process this. First , we load the XML file of Cascading 
 # Library
 Hit the following in CMD/Terminal if you don't have already them installed:
 
-'''python CODE HERE
-!pip install opencv-python
+'''python
+s = "!pip install opencv-python"
 '''
