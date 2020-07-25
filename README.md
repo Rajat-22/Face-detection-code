@@ -5,7 +5,7 @@ Facial Expression or Facial Emotion Detector can be used to detect his/her face.
 There are some steps to process this. First , we load the XML file of Cascading for detecting the presence of faces and then we retrain our network with our image. After that, we create object of that Cascading files then through that object we capture the video or dected the image then change the image color using BGR and convert that into Black-n-white. This image after detected then converted into its real color and shows on webcam.
 
 # Library
-Hit the following in CMD/Terminal if you don't have already them installed:
+Install all the library which are used in the project, from the codes you will understand all.
 
-!pip install opencv-python
+Check the codes file and apply on the IDE.
 
